@@ -50,11 +50,7 @@ public class Vehiculo {
         return cuotaMesGaraje;
     }
 
-    public int getCien() {
-        return CIEN;
-    }
-
-    public void calcularImpuestoCirculacion(double impuestoCirculacion) {
+    public void calcularImpuestoCirculacion() {
         System.out.println("2% importe del coche");
         this.impuestoCirculacion = 0.02;
     }
