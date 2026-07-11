@@ -5,6 +5,7 @@ public class Auto extends Vehiculo {
 
 
     public Auto(boolean tieneRadio, boolean tieneNavegador) {
+        super(marca, precio, cilindraje);
         this.tieneRadio = tieneRadio;
         this.tieneNavegador = tieneNavegador;
     }
@@ -13,14 +14,14 @@ public class Auto extends Vehiculo {
     public void calcularImpuestoCirculacion() {
         if (tieneRadio){
             System.out.println("Tiene Radio por lo tanto: Se incrementa 1% más al precio de la cuota");
-            super.impuestoCirculacion = 0.03;
+            super.setImpuestoCirculacion(this.precio * 0.03);
         }
         if (tieneNavegador){
             System.out.println("Tiene navegador por lo tanto: Se incrementa 2% más al precio de la cuota");
-            super.impuestoCirculacion = 0.04;
+            super.setImpuestoCirculacion(this.precio * 0.04);
         }
         if (super.cilindraje > 2499){
-            super.cuotaMesGaraje = 120;
+            super.setCuotaMesGaraje(120);
         }
     }
 }

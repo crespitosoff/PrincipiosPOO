@@ -2,6 +2,7 @@ public class Moto extends Vehiculo {
     private boolean tieneSidecar;
 
     public Moto(boolean tieneSidecar) {
+        super(marca, precio, cilindraje);
         this.tieneSidecar = tieneSidecar;
     }
 
@@ -9,8 +10,8 @@ public class Moto extends Vehiculo {
     public void calcularImpuestoCirculacion() {
         if (tieneSidecar) {
             System.out.println("10% más importe del coche, o sea 12%");
-            super.impuestoCirculacion = 0.12;
-            super.cuotaMesGaraje = 1.5;
+            super.setImpuestoCirculacion(this.precio * 0.1)
+            super.setCuotaMesGaraje(1.5);
         }
     }
 }

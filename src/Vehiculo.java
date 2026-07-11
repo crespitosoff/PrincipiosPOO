@@ -26,6 +26,13 @@ public class Vehiculo {
         this.cilindraje = cilindraje;
     }
 
+    public void setCuotaMesGaraje(double cuotaMesGaraje) {
+        if (cuotaMesGaraje > 0) {
+            this.cuotaMesGaraje = cuotaMesGaraje;
+        }
+        System.out.println("Valor inválido: No se puede procesar una cuota negativa");
+    }
+
     public String getPlaca() {
         return placa;
     }
@@ -52,10 +59,10 @@ public class Vehiculo {
 
     public void calcularImpuestoCirculacion() {
         System.out.println("2% importe del coche");
-        this.impuestoCirculacion = 0.02;
+        this.impuestoCirculacion = this.precio * 0.02;
     }
 
-    private boolean matricular(String placa) {
+    public boolean matricular(String placa) {
         if (placa.length() == 6) {
             this.placa = placa;
             return true;
